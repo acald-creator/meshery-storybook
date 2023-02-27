@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { Paper } from '../../components/Paper/paper.component';
+import { Paper } from '../../components/ui/Paper/paper.component';
 
 export default {
   title: 'Component/Paper',
@@ -8,4 +8,4 @@ export default {
 
 export const Template: StoryFn<typeof Paper> = (props) => <Paper {...props} />;
 
-export { SimplePaper } from '../../components/Paper/examples';
+export { SimplePaper } from '../../components/ui/Paper/examples';

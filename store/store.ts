@@ -1,12 +1,12 @@
-import UsersSlice from "@/features/user/usersSlice";
+import userReducer from "@/features/user/usersSlice";
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
 const makeStore = () => configureStore({
     reducer: {
-        user: UsersSlice.reducer
+        userReducer
     },
-    devTools: true,
+    devTools: process.env.NODE_ENV !== 'production',
 })
 
 type AppStore = ReturnType<typeof makeStore>

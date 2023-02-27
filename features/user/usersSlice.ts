@@ -14,4 +14,4 @@ const UsersSlice = createSlice({
 
 export const { updateUserState } = UsersSlice.actions;
 
-export default UsersSlice
+export default UsersSlice.reducer

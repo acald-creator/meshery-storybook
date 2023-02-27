@@ -1,0 +1,102 @@
+import { updateUserState } from "@/features/user/usersSlice";
+import ExtensionPointSchemaValidator from "@/utils/extensionPointSchemaValidator";
+import { useEffect, useState } from "react";
+import useSWR, { SWRConfig } from "swr";
+
+/*
+const fetcher = (url: string, options = {}, successFn, errorFn) => {
+  fetch(url, options)
+    .then((res) => {
+      if (res.status === 401 || res.redirected) {
+        if (window.location.host.endsWith("3000")) {
+          window.location.href = "/user/login"; // for local dev thru node server
+        } else {
+          window.location.reload(); // for use with Go server
+        }
+      }
+
+      let result;
+      if (res.ok) {
+        result = res.text().then((text) => {
+          try {
+            console.log("Returned output:", text);
+            return JSON.parse(text);
+          } catch (e) {
+            return text;
+          }
+        });
+
+        return result;
+      } else {
+        console.log("HTTP status code:", res.statusText)
+        throw new Error(res.statusText);
+      }
+    })
+    .then(successFn)
+    .catch(errorFn);
+};
+*/
+
+/*
+async function fetcher(url: string, options = {}) {
+  const res = await fetch(url, {
+    credentials: "same-origin",
+    mode: "no-cors"
+  });
+  return res.text();
+}
+
+const MESHERY_API_USER = "/api/user";
+const MESHERY_API_CAPABILITIES = "/api/provider/capabilities";
+
+export default function Home({ fallback }) {
+  const [user, setUser] = useState(null);
+  const [account, setAccount] = useState(ExtensionPointSchemaValidator("account"));
+  const [providerType, setProviderType] = useState("");
+  const { data, error } = useSWR("/api/user", fetcher, { refreshInterval: 1000 });
+
+  useEffect(() => {
+    fetcher(
+      MESHERY_API_USER,
+      {
+        credentials: "same-origin",
+        mode: "no-cors",
+      },
+      (user) => {
+        setUser(user);
+        updateUserState({ user });
+      },
+      (error) => ({
+        error,
+      })
+    );
+    fetcher(
+      MESHERY_API_CAPABILITIES,
+      {
+        credentials: "same-origin",
+        mode: "no-cors",
+        method: "GET",
+      },
+      (result) => {
+        if (result) {
+          setAccount(ExtensionPointSchemaValidator("account")(result?.extensions?.account));
+          setProviderType(result?.provider_type);
+        }
+      },
+      (err) => console.error(err)
+    );
+  }, []);
+
+  console.log("Is the list of user's data ready", !!data);
+
+  if (error) return "An error has occurred.";
+  if (!data) return "Loading...";
+  return (
+    <>
+      <SWRConfig value={fallback}>
+        <div>Hello</div>
+      </SWRConfig>
+    </>
+  )
+}
+*/

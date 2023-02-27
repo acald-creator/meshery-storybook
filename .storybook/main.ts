@@ -5,6 +5,8 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-coverage",
+    "storybook-addon-turbo-build"
   ],
   framework: {
     name: "@storybook/nextjs",

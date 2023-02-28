@@ -1,4 +1,3 @@
-import '@/styles/globals.css';
 import {CacheProvider, type EmotionCache} from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import {ThemeProvider} from '@mui/material/styles';
@@ -26,6 +25,7 @@ export default function App({Component, emotionCache = clientSideEmotionCache, .
 		<CacheProvider value={emotionCache}>
 			<Head>
 				<meta name='viewport' content='initial-scale=1, width=device-width' />
+				<title>Meshery</title>
 			</Head>
 			<ThemeProvider theme={lightTheme}>
 				<CssBaseline />

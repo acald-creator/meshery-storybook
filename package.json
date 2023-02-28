@@ -18,8 +18,10 @@
     "chromatic": "npx chromatic --project-token=96d010c9f4a1"
   },
   "dependencies": {
+    "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@mui/base": "^5.0.0-alpha.118",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "@reduxjs/toolkit": "^1.9.3",

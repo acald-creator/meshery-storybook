@@ -17,11 +17,12 @@ export type AppBarProps = {
 	sx?: SxProps<Theme>;
 };
 
-export const AppBar = ({props, ...rest}: AppBarProps) => (
-	<MuiAppBar {...props} {...rest} />
+export const AppBar = ({
+	position = 'static',
+	children = 'AppBar',
+	props,
+}: AppBarProps) => (
+	<MuiAppBar position={position} {...props}>
+		{children}
+	</MuiAppBar>
 );
-
-AppBar.defaultProps = {
-	position: 'fixed',
-	color: 'primary',
-};

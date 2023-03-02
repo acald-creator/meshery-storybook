@@ -1,8 +1,8 @@
-import Settings from "@/pages/settings";
+import Settings from '@/pages/settings';
 
 export default {
-    title: 'Pages/Settings',
-    component: Settings,
-}
+	title: 'Pages/Settings',
+	component: Settings,
+};
 
-export const SettingsPage = () => <Settings />
+export const SettingsPage = () => <Settings />;

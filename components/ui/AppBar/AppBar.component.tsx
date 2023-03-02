@@ -15,13 +15,10 @@ export type AppBarProps = {
 	enableColoOnDark?: boolean;
 	position?: 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative';
 	sx?: SxProps<Theme>;
+	children?: string;
 };
 
-export const AppBar = ({
-	position = 'static',
-	children = 'AppBar',
-	props,
-}: AppBarProps) => (
+export const AppBar = ({position = 'static', children = 'AppBar', ...props}: AppBarProps) => (
 	<MuiAppBar position={position} {...props}>
 		{children}
 	</MuiAppBar>

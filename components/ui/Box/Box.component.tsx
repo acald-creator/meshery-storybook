@@ -1,14 +1,8 @@
-import { SxProps, Theme } from '@mui/material';
-import { Box as MuiBox } from '@mui/material';
+import {type SxProps, type Theme} from '@mui/material';
+import {Box as MuiBox} from '@mui/material';
 
 export type BoxProps = {
-    sx?: SxProps<Theme>
-}
+	sx?: SxProps<Theme>;
+};
 
-export const Box = ({
-    children = 'Box'
-}) => (
-    <MuiBox>
-        {children}
-    </MuiBox>
-)
+export const Box = ({children = 'Box'}) => <MuiBox>{children}</MuiBox>;

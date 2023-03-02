@@ -22,14 +22,16 @@ export default function CustomErrorMessage() {
 
 	return (
 		<Box>
-			<Typography variant='h1'>
-				{customMessage}
-			</Typography>
-			<Typography variant='h5'>
-                Page does not exist
-			</Typography>
+			<Typography variant='h1'>{customMessage}</Typography>
+			<Typography variant='h5'>Page does not exist</Typography>
 			<Typography variant='body1'>
-				<p>Start a conversation at Layer5 community <Link underline='none' href='https://discuss.layer5.io/c/meshery/5' target='_blank'>discussion forum</Link>.</p>
+				<p>
+					Start a conversation at Layer5 community{' '}
+					<Link href='https://discuss.layer5.io/c/meshery/5' target='_blank'>
+						discussion forum
+					</Link>
+					.
+				</p>
 			</Typography>
 		</Box>
 	);

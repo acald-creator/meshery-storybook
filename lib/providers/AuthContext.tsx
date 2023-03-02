@@ -3,13 +3,14 @@ import {type ReactNode, createContext, useState} from 'react';
 import {type AuthValuesType, type UserDataType} from './types';
 
 const defaultProvider: AuthValuesType = {
-	user: null,
+	user: undefined,
 	loading: true,
 	setUser: () => null,
 	setLoading: () => Boolean,
 	setAvailableProviders() {
 		//
 	},
+
 };
 
 const ProviderAuthContext = createContext(defaultProvider);

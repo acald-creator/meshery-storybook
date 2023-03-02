@@ -1,5 +1,9 @@
 import {
-	Paper as MuiPaper, type PaperClasses, type PaperPropsVariantOverrides, type SxProps, type Theme,
+	Paper as MuiPaper,
+	type PaperClasses,
+	type PaperPropsVariantOverrides,
+	type SxProps,
+	type Theme,
 } from '@mui/material';
 import {type OverridableStringUnion} from '@mui/types';
 import React from 'react';
@@ -13,8 +17,6 @@ type PaperProps = {
 	variant?: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides>;
 };
 
-export const Paper = ({props, ...rest}: PaperProps) => (
-	<MuiPaper {...props} {...rest}></MuiPaper>
-);
+export const Paper = ({...rest}: PaperProps) => <MuiPaper {...rest}></MuiPaper>;
 
 Paper.defaultProps = {};

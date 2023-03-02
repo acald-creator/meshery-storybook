@@ -1,7 +1,5 @@
-import MesherySettings from "@/components/MesherySettings/Settings";
+import MesherySettings from '@/components/MesherySettings/Settings';
 
 export default function Settings() {
-	return (
-		<MesherySettings />
-	);
+	return <MesherySettings />;
 }

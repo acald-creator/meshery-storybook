@@ -1,40 +1,39 @@
-import {CacheProvider, type EmotionCache} from '@emotion/react';
-import CssBaseline from '@mui/material/CssBaseline';
-import {ThemeProvider} from '@mui/material/styles';
+import {Container, Stack} from '@mui/material';
+import {Provider} from 'jotai';
 import type {AppProps} from 'next/app';
 import Head from 'next/head';
-import {Provider} from 'react-redux';
 
-import {wrapper} from '@/features/store/store';
-import createEmotionCache from '@/styles/createEmotionCache';
-import lightTheme from '@/styles/themes/lightTheme';
+import ModeToggleButton from '@/components/ModeToggleButton';
+import Footer from '@/components/ui/ProviderFooter';
+import {AppThemeProvider} from '@/lib/providers/AppThemeProvider';
 
-import {AuthProvider} from './auth/AuthContext';
-
-const clientSideEmotionCache = createEmotionCache();
-
-type PageProps = {
-	emotionCache?: EmotionCache;
-} & AppProps;
-
-export default function App({Component, emotionCache = clientSideEmotionCache, ...rest}: Omit<AppProps, 'pageProps'> & PageProps) {
-	console.log('rest: ', rest);
-	const {store, props} = wrapper.useWrappedStore(rest);
-
+export default function App({Component, pageProps}: AppProps) {
 	return (
-		<CacheProvider value={emotionCache}>
+		<>
 			<Head>
 				<meta name='viewport' content='initial-scale=1, width=device-width' />
 				<title>Meshery</title>
 			</Head>
-			<ThemeProvider theme={lightTheme}>
-				<CssBaseline />
-				<Provider store={store}>
-					<AuthProvider>
-						<Component {...props.pageProps} />
-					</AuthProvider>
-				</Provider>
-			</ThemeProvider>
-		</CacheProvider>
+			<Provider>
+				<AppThemeProvider>
+					<Container
+						maxWidth={false}
+						disableGutters
+					>
+						<Stack direction='row' justifyContent='flex-end'>
+							<ModeToggleButton />
+						</Stack>
+						<Stack
+							justifyContent='center'
+							alignItems='center'
+							minHeight={'100vh'}
+						>
+							<Component {...pageProps} />
+						</Stack>
+						<Footer />
+					</Container>
+				</AppThemeProvider>
+			</Provider>
+		</>
 	);
 }

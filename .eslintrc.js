@@ -7,38 +7,30 @@ module.exports = {
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
-		// 'plugin:prettier/recommended',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
 		'plugin:react/recommended',
 		'plugin:storybook/recommended',
 		'xo',
-		'next/core-web-vitals'
+		'next/core-web-vitals',
+		'prettier'
 	],
 	overrides: [
 		{
-			extends: [
-				'xo-typescript',
-			],
-			files: [
-				'*.ts',
-				'*.tsx',
-			],
+			extends: ['xo-typescript'],
+			files: ['*.ts', '*.tsx'],
 		},
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',
 	},
-	plugins: [
-		'react',
-		'@typescript-eslint',
-		'prettier',
-	],
+	plugins: ['react', '@typescript-eslint', 'prettier'],
 	rules: {
+		'@typescript-eslint/naming-convention': 'warn',
 		'import/no-unresolved': 'error',
 		'import/order': [
 			'error',
-		  {
+			{
 				groups: [
 					'builtin', // Built-in imports (come from NodeJS native) go first
 					'external', // <- External imports
@@ -64,7 +56,7 @@ module.exports = {
 				ignoreMemberSort: false,
 				memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
 				allowSeparatedGroups: true,
-			}
-		]
-	}
-}
+			},
+		],
+	},
+};

@@ -1,13 +1,25 @@
 import {type ReactNode} from 'react';
 
-export type ProviderLayoutProps = {
+export type DashboardLayoutProps = {
 	children: ReactNode;
 };
 
-export type UserLayoutProps = {
+export type HeaderLayoutProps = {
 	children: ReactNode;
 };
 
 export type NavLayoutProps = {
+	children: ReactNode;
+};
+
+export type ProviderLayoutProps = {
+	children: ReactNode;
+};
+
+export type SettingsLayoutProps = {
+	children: ReactNode;
+};
+
+export type UserLayoutProps = {
 	children: ReactNode;
 };

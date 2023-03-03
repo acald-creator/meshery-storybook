@@ -7,7 +7,11 @@ import TabPanel from '@mui/lab/TabPanel';
 import Tab from '@mui/material/Tab';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 import {type SyntheticEvent, useState} from 'react';
+
+import MeshAdapterConfig from './MeshAdapterConfig';
+import MeshConfig from './MeshConfig';
 
 const SettingsTabsPanel = () => {
 	const [value, setValue] = useState<string>('1');
@@ -36,16 +40,10 @@ const SettingsTabsPanel = () => {
 				</Tooltip>
 			</TabList>
 			<TabPanel value='1'>
-				<Typography>
-					Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
-					cake caramels brownie gummies.
-				</Typography>
+				<MeshConfig />
 			</TabPanel>
 			<TabPanel value='2'>
-				<Typography>
-					Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
-					sesame snaps halvah.
-				</Typography>
+				<MeshAdapterConfig />
 			</TabPanel>
 			<TabPanel value='3'>
 				<Typography>
@@ -58,5 +56,10 @@ const SettingsTabsPanel = () => {
 };
 
 export default function MesherySettings() {
-	return <SettingsTabsPanel />;
+	return (
+		<>
+			<Link href="/">Go back home</Link>
+			<SettingsTabsPanel />
+		</>
+	);
 }

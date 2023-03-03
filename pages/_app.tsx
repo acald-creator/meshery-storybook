@@ -4,7 +4,6 @@ import type {AppProps} from 'next/app';
 import Head from 'next/head';
 
 import ModeToggleButton from '@/components/ModeToggleButton';
-import Footer from '@/components/ui/ProviderFooter';
 import {AppThemeProvider} from '@/lib/providers/AppThemeProvider';
 
 export default function App({Component, pageProps}: AppProps) {
@@ -19,18 +18,14 @@ export default function App({Component, pageProps}: AppProps) {
 					<Container
 						maxWidth={false}
 						disableGutters
+						sx={{minHeight: '100%'}}
 					>
-						<Stack direction='row' justifyContent='flex-end'>
+						<Stack spacing={0} direction='row' justifyContent='flex-end'>
 							<ModeToggleButton />
 						</Stack>
-						<Stack
-							justifyContent='center'
-							alignItems='center'
-							minHeight={'100vh'}
-						>
+						<Stack>
 							<Component {...pageProps} />
 						</Stack>
-						<Footer />
 					</Container>
 				</AppThemeProvider>
 			</Provider>
